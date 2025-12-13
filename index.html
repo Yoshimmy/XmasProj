@@ -12,5 +12,31 @@
         <div class="title">Merry Christmas!</div>
     </div>
     <div class = "lightsBox"><img src="Lights.png" alt="lights"></div>
+    <h2>Tap the presents!</h2>
+    <div class = "presBox"><button onclick="handlePresentClick()"><img src="Presents.png" alt="Presents"></button></div>
+    <script>
+        function handlePresentClick() {
+            const button = event.target.closest('button');
+            const img = button.querySelector('img');
+            
+            let brightness = 1;
+            const interval = setInterval(() => {
+                brightness += 0.05;
+                img.style.filter = `brightness(${brightness})`;
+                if (brightness >= 2) {
+                    clearInterval(interval);
+                }
+            }, 50);
+            
+            setTimeout(() => {
+                img.src = 'Tree.png';
+                img.alt = 'Tree';
+                button.onclick = '';
+                img.style.filter = 'brightness(1)';
+            }, 500);
+        }
+        
+        document.querySelector('.presBox button').onclick = handlePresentClick;
+    </script>
 </body>
 </html>
