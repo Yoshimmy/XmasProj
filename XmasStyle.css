@@ -14,14 +14,13 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-55%, -90%);
+  transform: translate(-55%, -100%);
 }
-
 .title {
     color: rgb(181, 186, 255);
     -webkit-text-stroke: 2.0px #000000;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 90px;
+    font-size: 15vw;
     font-weight: bolder;
     margin: 100px;
     margin-left: 20px;
@@ -67,7 +66,36 @@ body {
     filter: brightness(175%);
 }
 
-@font-face {
-    font-family: "Bubble";
-    src: url(Bubble-w10MZ.otf);
+h2 {
+    color: rgb(181, 186, 255);
+    -webkit-text-stroke: 1px #000000;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10vw;
+    font-weight: bolder;
+    margin-left: 20px;
+    z-index: 1;
+    max-width: 100%;
+}
+
+.presBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.presBox img {
+    max-width: 103%;
+    height: auto;
+    /* Maintain aspect ratio */
+    flex: 1 1 auto;
+    /* Allow images to grow and shrink */
+    object-fit: cover;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
